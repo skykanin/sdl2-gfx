@@ -81,7 +81,7 @@ liftType = \case
     m <- newName "m"
     return $
       ForallT
-        [PlainTV m]
+        [PlainTV m SpecifiedSpec]
         [AppT (ConT ''MonadIO) $ VarT m]
         (AppT (VarT m) t)
   t -> return t
